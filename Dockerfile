@@ -6,7 +6,7 @@ RUN npm cache clean --force
 
 COPY . .
 RUN npm install --unsafe-perm
-RUN npm run ng build -- --configuration production
+RUN npm run ng build
 
 FROM nginx:latest AS nginx
 
