@@ -1,0 +1,27 @@
+Configured lang:
+<select name="language"
+        [(ngModel)]="lang"
+        (ngModelChange)="onLanguageChange($event)">
+  <option value="es-ES" selected>Español (España)</option>
+  <option value="ca-ES">Catalán (España)</option>
+</select>
+<div style="margin-top: 15px">
+  <button style="margin-right: 5px"
+          [disabled]="recording"
+          (click)="onStartClick()">
+    Grabar
+  </button>
+  <button style="margin-right: 15px"
+          [disabled]="!recording"
+          (click)="onStopClick()">
+    Parar
+  </button>
+  <ng-container *ngIf="recording">
+    [REC]. Elapsed time: {{recordingElapsedTime | date: 'mm:ss'}}
+  </ng-container>
+</div>
+
+<div>
+  Records will appear here:
+  <div *ngFor="let record of records">{{record}}</div>
+</div>

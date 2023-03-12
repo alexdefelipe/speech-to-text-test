@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-pwa": "ng build --configuration production && cd dist/stt-test && angular-http-server --https --key ../../server.key --cert ../../server.crt -c-1",
+    "start-pwa": "ng build && cd dist/stt-test && angular-http-server --https --key ../../server.key --cert ../../server.crt -c-1",
+    "start-pwa-prod": "ng build --configuration production && cd dist/stt-test && angular-http-server --https --key ../../server.key --cert ../../server.crt -c-1 -p 8081",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
